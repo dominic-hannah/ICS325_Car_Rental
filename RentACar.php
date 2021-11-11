@@ -9,6 +9,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php
+$mysqli = new mysqli("localhost", "root", "","carrentalapp");
+if ($mysqli->connect_errno){
+    echo "Failed";
+}
+?>
 
 <div class="jumbotron text-center">
   <h1>MN CAR SOLUTION</h1>
@@ -45,10 +51,24 @@
       
       </div>
           </div>
+          <?php
+          $sql = "SELECT * FROM car";
+          $result = mysqli_query($mysqli,$sql);
+
+          while($row = $result->fetch_row()){
+            echo "<div class='col-sm-4'>";
+            echo "<img src='$row[7]' class='img-thumbnail'>";
+            echo "<p>$row[2] || $row[5] || $row[4] || $$row[3]</p>";
+            echo "<p>$row[6] </p>";
+            echo "</div>";
+          }
+
+          ?>
           <div class="col-sm-4">
             <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model</p>
+            <p>Brand || Model || Year || Price</p>
             <p>Discription of the car...</p>
+            
           </div>
           <div class="col-sm-4">
             <img src="images/car.jpg" class="img-thumbnail">
