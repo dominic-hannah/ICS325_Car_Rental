@@ -64,37 +64,7 @@ if ($mysqli->connect_errno){
           }
 
           ?>
-          <div class="col-sm-4">
-            <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model || Year || Price</p>
-            <p>Discription of the car...</p>
-            
-          </div>
-          <div class="col-sm-4">
-            <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model</p>
-            <p>Discription of the car...</p>
-          </div>
-          <div class="col-sm-4">
-            <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model</p>
-            <p>Discription of the car...</p>
-          </div>
-          <div class="col-sm-4">
-            <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model</p>
-            <p>Discription of the car...</p>
-          </div>
-          <div class="col-sm-4">
-            <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model</p>
-            <p>Discription of the car...</p>
-          </div>
-          <div class="col-sm-4">
-            <img src="images/car.jpg" class="img-thumbnail">
-            <p>Brand || Model</p>
-            <p>Discription of the car...</p>
-          </div>
+          
         </div>
 </div>
 

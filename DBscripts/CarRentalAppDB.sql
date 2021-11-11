@@ -53,7 +53,9 @@ INSERT INTO Car (User_ID, Brand_Name, Price_Per_Day, Car_Year, Car_Model, Car_De
     (1, 'Honda', 60.00, 2011, 'Accord', 'Average Car, Average Description', 'img/hondaA2011.jpg'),
     (2, 'Jeep', 70.00, 2019, 'Grand Cherokee', 'Car with big tires', 'img/jeepC2019.jpeg'),
     (3, 'Mclaren', 200.00, 2016, '675LT', 'Fast expensive car', 'img/mclaren62016.jpg'),
-    (4, 'Audi', 100.00, 2022, 'Q5', 'Reasonibly fast car', 'img/audiQ2022.jpg');
+    (4, 'Audi', 100.00, 2022, 'Q5', 'Reasonibly fast car', 'img/audiQ2022.jpg'),
+    (1, 'Ford', 75.00, 2019, 'F150', 'A Simple Pick-up Truck', 'img/fordF2019.jpg'),
+    (2, 'Lamborghini', 250.00, 2022, 'Aventador', 'AWD naturally aspirated V12', 'img/lamboA2022.jpg');
 
 INSERT INTO Rental_Agreement (User_ID, Car_ID, Rental_Start, Rental_End, Total_Price)
 	VALUES
