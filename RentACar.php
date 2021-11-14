@@ -10,10 +10,10 @@
 </head>
 <body>
 <?php
-$mysqli = new mysqli("localhost", "root", "","carrentalapp");
-if ($mysqli->connect_errno){
-    echo "Failed";
-}
+      $mysqli = new mysqli("localhost", "root", "","carrentalapp");
+      if ($mysqli->connect_errno){
+          echo "Failed";
+      }
 ?>
 
 <div class="jumbotron text-center">
@@ -53,6 +53,7 @@ if ($mysqli->connect_errno){
           </div>
           <?php
           $sql = "SELECT * FROM car";
+          $sql2 = "SELECT user1 from user where email == $email && pass == $pass";
           $result = mysqli_query($mysqli,$sql);
 
           while($row = $result->fetch_row()){
@@ -62,9 +63,7 @@ if ($mysqli->connect_errno){
             echo "<p>$row[6] </p>";
             echo "</div>";
           }
-
           ?>
-          
         </div>
 </div>
 
