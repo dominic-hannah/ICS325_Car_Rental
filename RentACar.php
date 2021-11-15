@@ -53,7 +53,7 @@
           </div>
           <?php
           $sql = "SELECT * FROM car";
-          $sql2 = "SELECT user1 from user where email == $email && pass == $pass";
+          
           $result = mysqli_query($mysqli,$sql);
 
           while($row = $result->fetch_row()){

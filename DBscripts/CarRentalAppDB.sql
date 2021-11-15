@@ -9,8 +9,7 @@ USE carRentalApp;
 CREATE TABLE IF NOT EXISTS User ( User_ID mediumint NOT NUll auto_increment, 
 	User_Fname VARCHAR(30) NOT NUll, User_Lname VARCHAR(30) NOT NULL, 
     User_Phone varchar(10) NOT NUll, User_Email Varchar(100) NOT NUll, 
-    User_Pass Varchar(50) NOT NUll, User_Admin BOOL, 
-    User_Host BOOL, User_Renter BOOL, 
+    User_Pass Varchar(50) NOT NUll, 
     PRIMARY KEY (User_ID));
     
 #DROP TABLE IF EXISTS Car;
@@ -40,13 +39,13 @@ PRIMARY KEY (Availability_ID),
 FOREIGN KEY (Car_ID) references car(Car_ID)); 
 
 
-INSERT INTO User (User_fname, User_Lname, User_Phone, User_Email, User_Pass, User_Admin, User_Host, User_Renter) 
+INSERT INTO User (User_fname, User_Lname, User_Phone, User_Email, User_Pass) 
 	VAlUES 
-    ('Dominic', 'Hannah', '6512701303','dominichannah@gmail.com', 'P@ssw0rd', True, False, False),
-    ('Hassan', 'Hassan', '6511234567', 'hassanhassan@gmail.com','P@ssw0rd', True, False, False),
-    ('Obin', 'Koffi', '6121234567', 'obinkoffi@gmail.com', 'P@ssw0rd', True, False, False),
-    ('John', 'Doe', '6514375182', 'johndoe@gmail.com', 'P@ssw0rd', False, True, False),
-	('Alice', 'Adams', '6126519988', 'aliceadams@gmail.com', 'P@ssw0rd', False, False, True);
+    ('Dominic', 'Hannah', '6512701303','dominichannah@gmail.com', 'P@ssw0rd'),
+    ('Hassan', 'Hassan', '6511234567', 'hassanhassan@gmail.com','P@ssw0rd'),
+    ('Obin', 'Koffi', '6121234567', 'obinkoffi@gmail.com', 'P@ssw0rd'),
+    ('John', 'Doe', '6514375182', 'johndoe@gmail.com', 'P@ssw0rd'),
+	('Alice', 'Adams', '6126519988', 'aliceadams@gmail.com', 'P@ssw0rd');
 
 INSERT INTO Car (User_ID, Brand_Name, Price_Per_Day, Car_Year, Car_Model, Car_Desc, Car_Image)
 	VALUES
