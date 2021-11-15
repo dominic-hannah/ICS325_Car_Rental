@@ -114,37 +114,27 @@ label.light {
           echo "Failed";
       }
 
-      
-    if(isset($_POST['user_email'])){
-        $email = $_POST['user_email'];
-        
-    }
 
-    if(isset($_POST['user_password'])){
+
+    if(isset($_POST['user_password']) AND isset($_POST['user_email'])){
         $password = $_POST['user_password'];
-        
-    }
+        $email = $_POST['user_email'];
+        $sql = "SELECT * from user WHERE User_Email = '".$email."' AND User_Pass = '".$password."'";
 
-
-    $sql = "SELECT * from user WHERE User_Email = '".$email."' AND User_Pass = '".$password."'";
-    
-    ?>
-    
-    <div class="container">
-      <div>
-        <?php
-    
         $result = mysqli_query($mysqli,$sql);
 
           while($row = mysqli_fetch_array($result)){
+
+            echo "<div class='container'>
+                  <div>";
             echo "<p> You are logged in under the name: ".$row['User_Fname']." ".$row['User_Lname']." </p>";
             
             echo "<p> With the Email address of: ".$row['User_Email']."";
+            echo "</div>
+            </div>";
           }
-
-        ?>
-        </div>
-      </div>
-
+        
+    }
+    ?>
 </body>
 </html>
