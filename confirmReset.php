@@ -97,15 +97,26 @@ label.light {
   </div>
   <div class="container">
 	  <?php
-	  $usermail = $_POST['email'];
-	  $pass = $_POST['user_password'];
-	  $confirm = $_POST['confirmpass'];
-	  
-	  if ($pass == $confirm){
-		  echo "<p><em>Your new password was successfully updated</em></p>";
-	  } else{
-		  echo "<p><em>Sorry, password don't match!</em></p>";
-	  }
+    $mysqli = new mysqli("localhost", "root", "","carrentalapp");
+    if ($mysqli->connect_errno){
+      echo "Failed";
+    }
+    if (isset($_POST['user_email']) AND isset($_POST['user_password']) AND isset($_POST['confirmpass'])){
+      $usermail = $_POST['user_email'];
+      $pass = $_POST['user_password'];
+      $confirm = $_POST['confirmpass'];
+      if ($pass == $confirm){
+        $sql = "UPDATE user SET User_Pass = '".$confirm."' WHERE User_Email = '".$usermail."'";
+        $result = mysqli_query($mysqli,$sql);
+        echo "<p><em>Your new password was successfully updated</em></p>";
+
+      }else{
+        echo "<p><em>Sorry, password don't match!</em></p><br>";
+        echo "<a href ='reset.php'> Try Again!</a>";
+      }
+      
+
+    }
 	  ?>
 </div>
 </body>
