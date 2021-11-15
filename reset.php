@@ -73,13 +73,13 @@ label.light {
  <div class="container">
   <h2>Reset password</h2>
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="../assignment3/index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="../assignment3/RentACar.html">Rent A car</a></li>
-        <li><a href="../assignment3/RentYourCar.html">Rent your car</a></li>                       
+        <li><a href="RentACar.html">Rent A car</a></li>
+        <li><a href="RentYourCar.html">Rent your car</a></li>                       
       </ul>
     </li>
      <li class="dropdown">
@@ -87,24 +87,24 @@ label.light {
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li class="active"><a href="#">Sign in</a></li>
-        <li><a href="../assignment3/registration.php">Create account</a></li>                      
+        <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="../assignment3/AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="../assignment3/ContactUs.html">Contact Us</a></li>   
+    <li><a href="AboutUs.html">About Us & FAQs</a></li>
+    <li><a href="ContactUs.html">Contact Us</a></li>   
   </ul>
 </div>
   </div>
   <div class="container">
-    <form action="../assignment3/confirmReset.php" method="POST" class="was-validated">
+    <form action="confirmReset.php" method="POST" class="was-validated">
         <fieldset>
           <legend><span class="number">User</span>Reset Password</legend>
         <label for="mail">Email:</label>
-          <input type="email" id="mail" name="user_email">
+          <input type="email" id="mail" name="user_email" required>
           <label for="password">New Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="user_password" required>
 		  <label for="password">confirm Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="confirmpass" required>
         </fieldset>
           <button type="submit">Update Password</button><br>
 		

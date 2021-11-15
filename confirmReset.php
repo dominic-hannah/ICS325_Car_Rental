@@ -73,13 +73,13 @@ label.light {
  <div class="container">
   <h2>Sign-In Portal</h2>
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="../assignment3/index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="../assignment3/RentACar.html">Rent A car</a></li>
-        <li><a href="../assignment3/RentYourCar.html">Rent your car</a></li>                       
+        <li><a href="RentACar.html">Rent A car</a></li>
+        <li><a href="RentYourCar.html">Rent your car</a></li>                       
       </ul>
     </li>
      <li class="dropdown">
@@ -87,18 +87,26 @@ label.light {
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li class="active"><a href="#">Sign in</a></li>
-        <li><a href="../assignment3/registration.php">Create account</a></li>                      
+        <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="../assignment3/AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="../assignment3/ContactUs.html">Contact Us</a></li>   
+    <li><a href="AboutUs.html">About Us & FAQs</a></li>
+    <li><a href="ContactUs.html">Contact Us</a></li>   
   </ul>
 </div>
   </div>
   <div class="container">
-	  <p>Password was successfully updated!!!</p>
-          
-    </form>
+	  <?php
+	  $usermail = $_POST['email'];
+	  $pass = $_POST['user_password'];
+	  $confirm = $_POST['confirmpass'];
+	  
+	  if ($pass == $confirm){
+		  echo "<p><em>Your new password was successfully updated</em></p>";
+	  } else{
+		  echo "<p><em>Sorry, password don't match!</em></p>";
+	  }
+	  ?>
 </div>
 </body>
 </html>
