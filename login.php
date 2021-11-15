@@ -87,7 +87,7 @@ label.light {
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li class="active"><a href="#">Sign in</a></li>
-        <li><a href="registration.html">Create account</a></li>                      
+        <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
     <li><a href="AboutUs.html">About Us & FAQs</a></li>
@@ -135,6 +135,7 @@ label.light {
         <?php
     
         $result = mysqli_query($mysqli,$sql);
+
           while($row = mysqli_fetch_array($result)){
             echo "<p> You are logged in under the name: ".$row['User_Fname']." ".$row['User_Lname']." </p>";
             

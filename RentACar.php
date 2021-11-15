@@ -36,7 +36,7 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="login.html">Login</a></li>
+        <li><a href="login.php">Login</a></li>
         <li><a href="registration.html">Create account</a></li>                      
       </ul>
     </li>
