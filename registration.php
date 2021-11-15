@@ -150,7 +150,7 @@ icon-container {
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="RentACar.html">Rent A car</a></li>
+        <li><a href="RentACar.php">Rent A car</a></li>
         <li><a href="RentYourCar.html">Rent your car</a></li>                       
       </ul>
     </li>
@@ -306,7 +306,7 @@ icon-container {
 
             $mysqli = new mysqli("localhost", "root", "","carrentalapp");
             if ($mysqli->connect_errno){
-              
+
               echo "Failed";
             }
 
