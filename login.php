@@ -104,7 +104,8 @@ label.light {
           <label for="password">Password:</label>
           <input type="password" id="password" name="user_password">
         </fieldset>
-          <button type="submit">Sign-in</button>
+          <button type="submit">Sign-in</button> <br>
+          <a href="reset.php" style="color:"blue">Reset password</a>
         
     </form>
 </div>
