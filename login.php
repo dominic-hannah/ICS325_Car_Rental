@@ -128,17 +128,22 @@ label.light {
 
     $sql = "SELECT * from user WHERE User_Email = '".$email."' AND User_Pass = '".$password."'";
     
-
+    ?>
     
+    <div class="container">
+      <div>
+        <?php
     
-    $result = mysqli_query($mysqli,$sql);
-
+        $result = mysqli_query($mysqli,$sql);
           while($row = mysqli_fetch_array($result)){
-            echo $row[1];
-            echo $row[2];
+            echo "<p> You are logged in under the name: ".$row['User_Fname']." ".$row['User_Lname']." </p>";
+            
+            echo "<p> With the Email address of: ".$row['User_Email']."";
           }
 
-?>
+        ?>
+        </div>
+      </div>
 
 </body>
 </html>

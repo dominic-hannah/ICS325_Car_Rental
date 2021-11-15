@@ -38,6 +38,7 @@ input[type="password"],
 input[type="date"],
 input[type="datetime"],
 input[type="email"],
+input[type="phone"],
 input[type="number"],
 input[type="search"],
 input[type="tel"],
@@ -175,19 +176,29 @@ icon-container {
         <fieldset>
           <legend><span class="number">1</span>Personal information</legend>
           <label for="name">First Name:</label>
-          <input type="text" id="name" name="user_name">
+          <input type="text" id="name" name="user_fname">
+
           <label for="name">Last Name:</label>
-          <input type="text" id="name" name="user_name">
+          <input type="text" id="name" name="user_lname">
+
           <label for="mail">Email:</label>
           <input type="email" id="mail" name="user_email">
+
+          <label for="phone">Phone #:</label>
+          <input type="phone" id="phone" name="user_phone">
+
           <label for="password">Create Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="user_password1">
+
           <label for="password">Confirm Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="user_password2">
+
           <label for="date">Date of Birth:</label>
           <input type="date" id="date" name="user_dob">
+
           <label for="text">Place of Birth:</label>
           <input type="text" id="place" name="user_pob">
+
           <label>Gender:</label>
           <input type="radio" id="sex" value="sex" name="user_sex"><label for="male" class="light">Male</label><br>
           <input type="radio" id="isMale" value="isMale" name="user_sex"><label for="female" class="light">Female</label>
