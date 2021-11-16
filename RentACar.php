@@ -61,8 +61,9 @@
             echo "<img src='$row[7]' class='img-thumbnail'>";
             echo "<p>$row[2] || $row[5] || $row[4] || $$row[3]</p>";
             echo "<p>$row[6] </p>";
+            echo "<form action='booked.php' method='POST'><button type='submit'>Book This Car</button></form>";
             echo "</div>";
-			echo "<form action='booked.php' method='POST'><button type='submit'>Book This Car</button></form>";
+			      
           }
           ?>
         </div>
