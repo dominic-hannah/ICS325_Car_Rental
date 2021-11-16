@@ -52,18 +52,9 @@
       </div>
           </div>
           <?php
-          $sql = "SELECT * FROM car";
+				echo "You succesfully booked a car!<br>";
+				echo "<a href=index.html>GO BACK TO HOME</a><br>";
           
-          $result = mysqli_query($mysqli,$sql);
-
-          while($row = $result->fetch_row()){
-            echo "<div class='col-sm-4'>";
-            echo "<img src='$row[7]' class='img-thumbnail'>";
-            echo "<p>$row[2] || $row[5] || $row[4] || $$row[3]</p>";
-            echo "<p>$row[6] </p>";
-            echo "</div>";
-			echo "<form action='booked.php' method='POST'><button type='submit'>Book This Car</button></form>";
-          }
           ?>
         </div>
 </div>
