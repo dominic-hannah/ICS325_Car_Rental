@@ -73,7 +73,7 @@ label.light {
  <div class="container">
   <h2>Sign-In Portal</h2>
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
@@ -133,9 +133,27 @@ label.light {
             echo "<p> With the Email address of: ".$row['User_Email']."";
             echo "</div>
             </div>";
+
+            session_start();
+         
+            $_SESSION['user_fname'] = $row['User_Fname'];
+            $_SESSION['user_lname'] = $row['User_Lname'];
+            $_SESSION['user_id'] = $row['User_ID'];
+
+            echo  $_SESSION['user_fname'];
           }
+
+
+         
+          
         
-    }
+      }
+
+
+
+
+
+
     ?>
 </body>
 </html>

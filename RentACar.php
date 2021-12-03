@@ -63,7 +63,6 @@
             echo "<p>$row[6] </p>";
             echo "<form action='booked.php' method='POST'><button type='submit'>Book This Car</button></form>";
             echo "</div>";
-			      
           }
           ?>
         </div>

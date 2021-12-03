@@ -76,6 +76,10 @@
   </div>
 </div>
 </div>
-
+<?php
+session_start();
+echo $_SESSION['user_fname'];
+echo $_SESSION['user_lname'];
+?>
 </body>
 </html>
