@@ -52,6 +52,12 @@
       </div>
           </div>
           <?php
+
+          $mysqli = new mysqli("localhost", "root", "","carrentalapp");
+          if ($mysqli->connect_errno){
+              echo "Failed";
+          }
+          
           $sql = "SELECT * FROM car";
           
           $result = mysqli_query($mysqli,$sql);
