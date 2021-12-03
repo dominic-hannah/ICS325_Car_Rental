@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS User ( User_ID mediumint NOT NUll auto_increment,
 
 CREATE TABLE IF NOT EXISTS Car ( Car_ID mediumint NOT NULL auto_increment, User_ID mediumint NOT NULL,
 	Brand_Name VARCHAR(20) NOT NULL, Price_Per_Day float NOT NULL, Car_Year int NOT NULL,
-    Car_Model varchar(20) NOT NULL, Car_Desc varchar(400) NOT NULL, Car_Image BLOB,
+    Car_Model varchar(20) NOT NULL, Car_Desc varchar(400) NOT NULL, Car_Image varchar(50),
     PRIMARY KEY (Car_ID), FOREIGN KEY (User_ID) REFERENCES User(User_ID));
     
 
@@ -49,12 +49,12 @@ INSERT INTO User (User_fname, User_Lname, User_Phone, User_Email, User_Pass)
 
 INSERT INTO Car (User_ID, Brand_Name, Price_Per_Day, Car_Year, Car_Model, Car_Desc, Car_Image)
 	VALUES
-    (1, 'Honda', 60.00, 2011, 'Accord', 'Average Car, Average Description', LOAD_FILE(D:/XAMPP/htdocs/CarRentalApp/ICS325_Car_Rental/img/hondaA2011)),
-    (2, 'Jeep', 70.00, 2019, 'Grand Cherokee', 'Car with big tires', LOAD_FILE(img/jeepC2019.jpeg)),
-    (3, 'Mclaren', 200.00, 2016, '675LT', 'Fast expensive car', LOAD_FILE(img/mclaren62016.jpg)),
-    (4, 'Audi', 100.00, 2022, 'Q5', 'Reasonibly fast car', LOAD_FILE(img/audiQ2022.jpg)),
-    (1, 'Ford', 75.00, 2019, 'F150', 'A Simple Pick-up Truck', LOAD_FILE(img/fordF2019.jpg)),
-    (2, 'Lamborghini', 250.00, 2022, 'Aventador', 'AWD naturally aspirated V12', LOAD_FILE(img/lamboA2022.jpg));
+    (1, 'Honda', 60.00, 2011, 'Accord', 'Average Car, Average Description', 'img/hondaA2011.jpg'),
+    (2, 'Jeep', 70.00, 2019, 'Grand Cherokee', 'Car with big tires', 'img/jeepC2019.jpeg'),
+    (3, 'Mclaren', 200.00, 2016, '675LT', 'Fast expensive car', 'img/mclaren62016.jpg'),
+    (4, 'Audi', 100.00, 2022, 'Q5', 'Reasonibly fast car', 'img/audiQ2022.jpg'),
+    (1, 'Ford', 75.00, 2019, 'F150', 'A Simple Pick-up Truck','img/fordF2019.jpg'),
+    (2, 'Lamborghini', 250.00, 2022, 'Aventador', 'AWD naturally aspirated V12', 'img/lamboA2022.jpg');
 
 INSERT INTO Rental_Agreement (User_ID, Car_ID, Rental_Start, Rental_End, Total_Price)
 	VALUES

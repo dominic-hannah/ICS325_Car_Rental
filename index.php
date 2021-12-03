@@ -26,7 +26,7 @@
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li><a href="RentACar.php">Rent A car</a></li>
-        <li><a href="RentYourCar.html">Rent your car</a></li>                       
+        <li><a href="RentYourCar.php">Rent your car</a></li>                       
       </ul>
     </li>
      <li class="dropdown">

@@ -23,13 +23,13 @@
  <div class="container">
   <h2>We are happy to help you get a rental</h2>
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li class="active"><a href="#">Rent A car</a></li>
-        <li><a href="RentYourCar.html">Rent your car</a></li>                       
+        <li><a href="RentYourCar.php">Rent your car</a></li>                       
       </ul>
     </li>
      <li class="dropdown">
@@ -37,7 +37,7 @@
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li><a href="login.php">Login</a></li>
-        <li><a href="registration.html">Create account</a></li>                      
+        <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
     <li><a href="AboutUs.html">About Us & FAQs</a></li>
