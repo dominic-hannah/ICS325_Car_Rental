@@ -202,9 +202,6 @@ icon-container {
           <label>Gender:</label>
           <input type="radio" id="sex" value="sex" name="user_sex"><label for="male" class="light">Male</label><br>
           <input type="radio" id="isMale" value="isMale" name="user_sex"><label for="female" class="light">Female</label>
-          <label>Are you an admin:</label>
-          <input type="radio" id="choice" value="choice1" name="choice"><label for="Yes" class="light">Yes</label><br>
-          <input type="radio" id="choice2" value="choice2" name="choice"><label for="No" class="light">No</label>
           <label for="address">Address 1:</label>
           <input type="text" id="add1" name="user_add1">
           <label for="address">Address 2:</label>
@@ -238,46 +235,6 @@ icon-container {
         </fieldset>
         
 
-        <fieldset>
-          <legend><span class="number">2</span>Seller Account</legend>
-          <label for="bio">Describe your account rental service:</label>
-          <textarea id="bio" name="user_bio"></textarea>
-          <label for="picture">Upload profile picture:</label>
-          <input type="file" id="picture" name="yourpicture">
-           <label for="routingnumber">Routine number:</label>
-          <input type="number" id="routine" name="routine">
-           <label for="routinenumber">Account number:</label>
-          <input type="number" id="acctnum" name="acctnum">
-          <label for="bank">Bank or financial institution:</label>
-          <input type="text" id="bankinfo" name="bankinfo">
-        </fieldset>
-        <legend><span class="number">3</span>Buyer billing information</legend>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-              </div>
-
-        <fieldset>
-        
-        </fieldset>
         <button type="submit" onclick="alert('Thank you!!! for creating your user account')">Create Your Account</button>
     <a href="registration.html"><button  type="button"style="background-color:orange">Clear</button></a>
     <a href="index.html"><button type="button" style="background-color:red" >Home Page</button></a>
