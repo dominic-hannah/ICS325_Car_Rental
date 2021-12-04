@@ -43,12 +43,12 @@
     <li><a href="AboutUs.html">About Us & FAQs</a></li>
     <li><a href="ContactUs.html">Contact Us</a></li> 
 
-			<div class="col-xs-5 col-sm-3 pull-right">
+    <div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
 			 <div class="input-group">
-            <input type="text" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" name="search" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+              <button class="btn btn-default" name="submit" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </div>
 				 </form>
 				</div>
@@ -63,22 +63,22 @@
       </div>
           </div>
           <?php
-
-          $mysqli = new mysqli("localhost", "root", "","carrentalapp");
-          if ($mysqli->connect_errno){
-              echo "Failed";
-          }
-          
           $sql = "SELECT * FROM car";
           
           $result = mysqli_query($mysqli,$sql);
 
           while($row = $result->fetch_row()){
+            $_SESSION['car'] = $row;
             echo "<div class='col-sm-4'>";
-            echo "<img src='$row[7]' class='img-thumbnail'>";
-            echo "<p>$row[2] || $row[5] || $row[4] || $$row[3]</p>";
+            echo '<input type="hidden" name="car_price" value="'.$row[3].'">';
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row[7]).'" class="img-thumbnail">';
+            echo "<p>$row[2] || $row[5] || $row[4] || $row[3]</p>";
+            
             echo "<p>$row[6] </p>";
-            echo "<form action='booked.php' method='POST'><button type='submit'>Book This Car</button></form>";
+            echo "<form action='booked.php' method='POST'>
+            <input type='date' id='start' name='start_date' value='2021-12-12'>
+            <input type='date' id='start' name='end_date' value='2021-12-12'><br>
+            <button type='submit'>Book This Car</button></form>";
             echo "</div>";
           }
           ?>

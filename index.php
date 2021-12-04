@@ -43,9 +43,9 @@
 			<div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
 			 <div class="input-group">
-            <input type="text" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" name="search" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+              <button class="btn btn-default" name="submit" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </div>
 				 </form>
 				</div>
@@ -53,8 +53,38 @@
   </ul>
 </div>
   
-  <div class="container">
+<div class="container">
   <div class="row">
+
+  <?php
+
+    $result = null;
+
+    if (isset($_POST['submit'])) {
+        
+        $searchValue = $_POST['search'];
+        $mysqli = new mysqli("localhost", "root", "","carrentalapp");
+        if ($mysqli->connect_error) {
+            echo "connection Failed: " . $con->connect_error;
+        } else {
+            if($searchValue != null){
+              $sql = "SELECT * FROM car WHERE Brand_Name like '%$searchValue%'";
+
+              $result = $mysqli->query($sql);
+
+              while ($row = $result->fetch_assoc()) {
+                echo "<div class='col-sm-4'>";
+                echo "<h3> ".$row['Brand_Name']." ".$row['Car_Model']." ".$row['Car_Year']." </h3>";
+                echo "<img src='data:image/jpeg;base64,".base64_encode($row['Car_Image'])."' width='300px' height='200px'/>";
+                echo "<p>".$row['Car_Desc']."</p>";
+                echo "</div>";
+              }
+              
+            }        
+        }   
+    }
+    if($result == null){
+    ?>
     <div class="col-sm-4">
       <h3>BMW I8 (2021)</h3>
       <img src="img\bm.jpeg" width="300px" height="200px"/>
@@ -73,13 +103,18 @@
       <p>You want to make money with your nice car?</p>
       <p>We are here to help. Join us by creating your profile and add your car.</p>
     </div>
+    <?php 
+    }
+    ?>
   </div>
 </div>
 </div>
 <?php
+if (!empty($_SESSION)) {
 session_start();
 echo $_SESSION['user_fname'];
-echo $_SESSION['user_lname'];
+echo $_SESSION['user_lname'];}
 ?>
 </body>
 </html>
+

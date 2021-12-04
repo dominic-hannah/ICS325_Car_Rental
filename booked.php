@@ -43,12 +43,12 @@
     <li><a href="AboutUs.html">About Us & FAQs</a></li>
     <li><a href="ContactUs.html">Contact Us</a></li>   
 	
-			<div class="col-xs-5 col-sm-3 pull-right">
+    <div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
 			 <div class="input-group">
-            <input type="text" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" name="search" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+              <button class="btn btn-default" name="submit" type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </div>
 				 </form>
 				</div>
@@ -56,6 +56,7 @@
   </ul>
 </div>
   
+
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
@@ -63,8 +64,23 @@
       </div>
           </div>
           <?php
-				echo "You succesfully booked a car!<br>";
-				echo "<a href=index.html>GO BACK TO HOME</a><br>";
+          function dateDiffInDays($date1, $date2)  // 10:10:2021  15/10/2021 ==> 5 days
+          {
+              $diff = strtotime($date2) - strtotime($date1);
+          
+              // 1 day = 24 hours
+              // 24 * 60 * 60 = 86400 seconds
+              return abs(round($diff / 86400));
+          }
+        session_start();
+        $car = $_SESSION['car'];
+         $start_date = $_POST['start_date'];
+         $end_date = $_POST['end_date'];
+         $days = dateDiffInDays($start_date, $end_date);
+         $price = ((int)$days * (int)$car[3]);
+				echo "You succesfully booked a car!<br> total price : ".$price."$<br>";
+        echo "days : ".$days."<br>car id : ".$car[0]."<br>car price per day : ".$car[3]."$  <br>";
+				echo "<a href=index.php>GO BACK TO HOME</a><br>";
           
           ?>
         </div>
@@ -73,4 +89,4 @@
 
 
 </body>
-</html>
+</html> 
