@@ -38,21 +38,21 @@
       </ul>
     </li>
     <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>   
+    <li><a href="ContactUs.html">Contact Us</a></li> 
+		
+			<div class="col-xs-5 col-sm-3 pull-right">
+        	<form class="navbar-form" role="search">
+			 <div class="input-group">
+            <input type="text" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+				 </form>
+				</div>
+		 
   </ul>
 </div>
-<div class="container">
-  <center>
-    <br>
-    <div class="input-group rounded" 
-    <form action="#" method="POST"/>
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-      aria-describedby="search-addon" /><br><br>
-        <button type="submit" style='font-size:24px'>Search car <i class='fas fa-search'></i></button>
-      </div>
-    </form>
-</div>
-  </center>
+  
   <div class="container">
   <div class="row">
     <div class="col-sm-4">

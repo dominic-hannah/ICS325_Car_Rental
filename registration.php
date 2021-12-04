@@ -145,13 +145,13 @@ icon-container {
   <h2>Create Account</h2>
 
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <li><a href="RentACar.php">Rent A car</a></li>
-        <li><a href="RentYourCar.html">Rent your car</a></li>                       
+        <li><a href="RentYourCar.php">Rent your car</a></li>                       
       </ul>
     </li>
      <li class="dropdown">
@@ -163,7 +163,18 @@ icon-container {
       </ul>
     </li>
     <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>   
+    <li><a href="ContactUs.html">Contact Us</a></li>
+
+			<div class="col-xs-5 col-sm-3 pull-right">
+        	<form class="navbar-form" role="search">
+			 <div class="input-group">
+            <input type="text" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+				 </form>
+				</div>
+		 	
   </ul>
 </div>
   
