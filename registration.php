@@ -286,12 +286,8 @@ icon-container {
               $result = mysqli_query($mysqli,$sql);
             }   
         }
-        
-
-        
-
-
-?>
+        mysqli_close($mysqli);
+        ?>
 
 </body>
 </html>

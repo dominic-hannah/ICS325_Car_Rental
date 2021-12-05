@@ -126,8 +126,8 @@ label.light {
         echo "<a href ='reset.php'> Try Again!</a>";
       }
       
-
     }
+    mysqli_close($mysqli);
 	  ?>
 </div>
 </body>

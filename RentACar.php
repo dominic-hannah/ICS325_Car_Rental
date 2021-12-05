@@ -94,6 +94,7 @@
               echo "</div>";
              
           }
+          mysqli_close($mysqli);
           ?>
         </div>
 </div>

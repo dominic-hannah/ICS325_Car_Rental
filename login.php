@@ -153,17 +153,9 @@ label.light {
 
           }
 
-
-         
-          
         
       }
-
-
-
-
-
-
+      mysqli_close($mysqli);
     ?>
 </body>
 </html>

@@ -91,6 +91,8 @@
                       ('".$_SESSION['user_id']."', '".$car[0]."', '".$start_date."', '".$end_date."', '".$price."')";
                  
                  mysqli_query($mysqli,$sql);
+
+          mysqli_close($mysqli);
           
           ?>
         </div>

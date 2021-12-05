@@ -128,6 +128,7 @@
           
       }
     }
+    mysqli_close($mysqli);
 ?>
 
 
