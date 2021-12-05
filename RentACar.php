@@ -80,11 +80,13 @@
             echo "<p>$row[2] || $row[5] || $row[4] || $row[3]</p>";
             
             echo "<p>$row[6] </p>";
+
             echo "<form action='booked.php' method='POST'>
-            <input type='date' id='start' name='start_date' value='2021-12-12'>
-            <input type='date' id='start' name='end_date' value='2021-12-12'><br>
-            <button type='submit'>Book This Car</button></form>";
+            <input type='date' id='start' name='start_date' value=''>
+            <input type='date' id='start' name='end_date' value=''><br><br>
+            <button type='submit'>Book This Car</button></form><br>";
             echo "</div>";
+            
           }
           ?>
         </div>

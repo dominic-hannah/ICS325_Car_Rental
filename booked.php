@@ -74,6 +74,7 @@
           }
         session_start();
         $car = $_SESSION['car'];
+        echo $car[2];
          $start_date = $_POST['start_date'];
          $end_date = $_POST['end_date'];
          $days = dateDiffInDays($start_date, $end_date);

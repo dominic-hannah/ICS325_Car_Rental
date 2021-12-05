@@ -151,7 +151,6 @@ label.light {
             $_SESSION['user_lname'] = $row['User_Lname'];
             $_SESSION['user_id'] = $row['User_ID'];
 
-            echo  $_SESSION['user_fname'];
           }
 
 
