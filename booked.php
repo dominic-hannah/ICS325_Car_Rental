@@ -72,16 +72,25 @@
               // 24 * 60 * 60 = 86400 seconds
               return abs(round($diff / 86400));
           }
+
         session_start();
-        $car = $_SESSION['car'];
-        echo $car[2];
+          $carName = $_POST['carName']; 
+        
+          $car = $_SESSION["$carName"];
+
          $start_date = $_POST['start_date'];
          $end_date = $_POST['end_date'];
          $days = dateDiffInDays($start_date, $end_date);
          $price = ((int)$days * (int)$car[3]);
-				echo "You succesfully booked a car!<br> total price : ".$price."$<br>";
-        echo "days : ".$days."<br>car id : ".$car[0]."<br>car price per day : ".$car[3]."$  <br>";
-				echo "<a href=index.php>GO BACK TO HOME</a><br>";
+
+          echo "You succesfully booked a car!<br> total price : ".$price."$<br>";
+          echo "days : ".$days."<br>car price per day : ".$car[3]."$  <br>";
+          echo "<a href=index.php>GO BACK TO HOME</a><br>";
+
+          $sql = "INSERT INTO rental_agreement (User_ID, Car_ID, Rental_Start, Rental_End, Total_Price) VALUES 
+                      ('".$_SESSION['user_id']."', '".$car[0]."', '".$start_date."', '".$end_date."', '".$price."')";
+                 
+                 mysqli_query($mysqli,$sql);
           
           ?>
         </div>

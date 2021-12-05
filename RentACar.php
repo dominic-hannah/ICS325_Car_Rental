@@ -70,23 +70,29 @@
           $result = mysqli_query($mysqli,$sql);
 
           while($row = $result->fetch_row()){
-            if (!empty($_SESSION)) {
-                
-                $_SESSION['car'] = $row;
-              }
-            echo "<div class='col-sm-4'>";
-            echo '<input type="hidden" name="car_price" value="'.$row[3].'">';
-            echo '<img src="'.$row[7].'" class="img-thumbnail">';
-            echo "<p>$row[2] || $row[5] || $row[4] || $row[3]</p>";
-            
-            echo "<p>$row[6] </p>";
+              $carName = $row[5];
+              
+              $_SESSION["$carName"] = $row;
+              
+              
+              echo "<div class='col-sm-4'>";
+              echo '<input type="hidden" name="car_price" value="'.$row[3].'">';
+              echo '<img src="'.$row[7].'" class="img-thumbnail">';
+              echo "<p>$row[2] || $row[5] || $row[4] || $row[3]</p>";
+              echo "<p>$row[6] </p>";
 
-            echo "<form action='booked.php' method='POST'>
-            <input type='date' id='start' name='start_date' value=''>
-            <input type='date' id='start' name='end_date' value=''><br><br>
-            <button type='submit'>Book This Car</button></form><br>";
-            echo "</div>";
-            
+              if (isset($_SESSION['user_id'])){
+                echo "<form action='booked.php' method='POST'>
+                <input type='date' id='start' name='start_date' value=''>
+                <input type='date' id='start' name='end_date' value=''><br><br>
+                <input type='hidden' name='carName' value='$carName'/>
+                <button type='submit'>Book This Car</button></form><br>";
+              }
+              if (empty($_SESSION['user_id'])){
+                echo "Log in to rent a car!";
+              }
+              echo "</div>";
+             
           }
           ?>
         </div>
