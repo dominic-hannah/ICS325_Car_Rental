@@ -68,7 +68,10 @@
           $result = mysqli_query($mysqli,$sql);
 
           while($row = $result->fetch_row()){
-            $_SESSION['car'] = $row;
+            if (!empty($_SESSION)) {
+                session_start();
+                $_SESSION['car'] = $row;
+              }
             echo "<div class='col-sm-4'>";
             echo '<input type="hidden" name="car_price" value="'.$row[3].'">';
             echo '<img src="data:image/jpeg;base64,'.base64_encode($row[7]).'" class="img-thumbnail">';
@@ -85,7 +88,12 @@
         </div>
 </div>
 
-
+<?php
+if (!empty($_SESSION)) {
+session_start();
+echo $_SESSION['user_fname'];
+echo $_SESSION['user_lname'];}
+?>
 
 </body>
 </html>

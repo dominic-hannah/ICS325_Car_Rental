@@ -41,14 +41,14 @@
     <li><a href="ContactUs.html">Contact Us</a></li> 
 		
 			<div class="col-xs-5 col-sm-3 pull-right">
-        	<form class="navbar-form" role="search">
-			 <div class="input-group">
-            <input type="text" name="search" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-              <button class="btn btn-default" name="submit" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-            </div>
+        	<form class="navbar-form" role="search" action="" method="post">
+          <div class="input-group">
+                <input type="text" name="search" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" name="submit" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </div>        
 				 </form>
-				</div>
 		 
   </ul>
 </div>
@@ -71,7 +71,7 @@
               $sql = "SELECT * FROM car WHERE Brand_Name like '%$searchValue%'";
 
               $result = $mysqli->query($sql);
-
+              
               while ($row = $result->fetch_assoc()) {
                 echo "<div class='col-sm-4'>";
                 echo "<h3> ".$row['Brand_Name']." ".$row['Car_Model']." ".$row['Car_Year']." </h3>";
