@@ -88,12 +88,5 @@
         </div>
 </div>
 
-<?php
-if (!empty($_SESSION)) {
-session_start();
-echo $_SESSION['user_fname'];
-echo $_SESSION['user_lname'];}
-?>
-
 </body>
 </html>
