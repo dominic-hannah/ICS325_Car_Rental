@@ -63,18 +63,20 @@
       </div>
           </div>
           <?php
+
+          session_start();
           $sql = "SELECT * FROM car";
           
           $result = mysqli_query($mysqli,$sql);
 
           while($row = $result->fetch_row()){
             if (!empty($_SESSION)) {
-                session_start();
+                
                 $_SESSION['car'] = $row;
               }
             echo "<div class='col-sm-4'>";
             echo '<input type="hidden" name="car_price" value="'.$row[3].'">';
-            echo '<img src="data:image/jpeg;base64,'.base64_encode($row[7]).'" class="img-thumbnail">';
+            echo '<img src="'.$row[7].'" class="img-thumbnail">';
             echo "<p>$row[2] || $row[5] || $row[4] || $row[3]</p>";
             
             echo "<p>$row[6] </p>";
