@@ -20,9 +20,14 @@
 </head>
 <body>
 <?php
-      $mysqli = new mysqli("localhost", "root", "","carrentalapp");
-      if ($mysqli->connect_errno){
-          echo "Failed";
+      $servername = 'localhost';
+      $username = 'ics325fa2105';
+      $pass = '5768';
+      $databasename = 'ics325fa2105';
+
+      $mysqli = new mysqli($servername, $username, $pass, $databasename);
+     if ($mysqli->connect_errno){
+          echo "Failed" .mysqli_connect_error();
       }
 ?>
 
@@ -60,8 +65,8 @@
         <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>   
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li>   
 	
     <div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
@@ -93,7 +98,6 @@
               return abs(round($diff / 86400));
           }
 
-        session_start();
           $carName = $_POST['carName']; 
         
           $car = $_SESSION["$carName"];
@@ -116,10 +120,14 @@
                  mysqli_query($mysqli,$sql);
 
           
-          $daterange = new DatePeriod(strtotime($start_date), $interval, strtotime($end_date));
+          $begin_date = new DateTime($start_date);
+          $final_date = new DateTime($end_date);
+          
+          $daterange = new DatePeriod($begin_date, $interval, $final_date);
           foreach ($daterange as $date){
-            $sql2 = "INSERT INTO availability (Car_ID, Date_Unavailible) VALUES ('".$car[0]."', '".$date."')";
-            mysqli_query($mysqli,$sql2);
+              $new_date = $date->format('d-m-y');
+              $sql2 = "INSERT INTO availability (Car_ID, Date_Unavailible) VALUES ('".$car[0]."', '".$new_date."')";
+              mysqli_query($mysqli,$sql2);
           }
 
           mysqli_close($mysqli);

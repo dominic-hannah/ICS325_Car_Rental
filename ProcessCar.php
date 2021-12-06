@@ -1,7 +1,12 @@
 <?php
-    $mysqli = new mysqli("localhost", "root", "","carrentalapp");
-    if ($mysqli->connect_errno){
-        echo "Failed";
+    $servername = 'localhost';
+    $username = 'ics325fa2105';
+    $pass = '5768';
+    $databasename = 'ics325fa2105';
+
+    $mysqli = new mysqli($servername, $username, $pass, $databasename);
+   if ($mysqli->connect_errno){
+        echo "Failed" .mysqli_connect_error();
     }
     
       $password = $_POST['inputPassword'];

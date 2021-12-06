@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About Us</title>
+  <title>MN Car rental| Contact Us</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -35,7 +35,7 @@
 	</div>
 </div>
  <div class="container">
-  <h2>About Us</h2>
+  <h2>Contact Us</h2>
   <ul class="nav nav-tabs" role="tablist">
     <li><a href="index.php">Home</a></li>
      <li class="dropdown">
@@ -50,12 +50,12 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="login.php">Sign In</a></li>
+        <li><a href="login.php">Login</a></li>
         <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li class="active"><a href="#">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>   
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li class="active"><a href="#">Contact Us</a></li>  
 			<div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
 			 <div class="input-group">
@@ -69,18 +69,18 @@
 </div>
   
 <div class="container">
-<div class="row">
-<div class="col-md-8">
-  <h3>About Us</h3>
-  <p>Here at MN Car Solution we aim to provide each user with the highest quality car rental experience available. We are based out of Minneapolis which gives us the ability to cater towards members of the Minneapolis community by providing inexpensive cars with convenience. The goal of our application is to make renting a car at a reasonable price much more easy by providing community owned cars to others in the community.</p>
-</div>
-</div>
-<div class="row">
-  <div class="col-md-8">
-    <h3>Our Community</h3>
-    <p>We have a great community of rental owners who graciously have made their personal vehicles available to the renting community. Our catalog of great cars has been provided by many users over time in order to give each renter the ability to rent exactly what fulfills their needs.</p>
-  </div>
-  </div>
+  <h3>Add a comment and your email and we will contact you ASAP</h3>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="adminComment">Example textarea</label>
+      <textarea class="form-control" id="adminComment" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 
 <br><br>

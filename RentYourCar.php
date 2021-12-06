@@ -26,11 +26,11 @@
   <div class="col-xs-5 col-sm-3 pull-right">
 	<?php
     session_start();
-    if (!empty($_SESSION)) {
+    if (isset($_SESSION['user_fname']) AND isset($_SESSION['user_lname'])) {
       echo "<span style='color:red'><em>Connected User:</em> <strong>".$_SESSION['user_fname']." ".$_SESSION['user_lname']."</strong></span>";
        ;
+       echo "  "."<a style='color:blue' href='signout.php'><u>Sign out</u></a>";	
     }
-	echo "  "."<a style='color:blue' href='signout.php'><u>Sign out</u></a>";	
     ?>
 	</div>
 </div>
@@ -54,8 +54,8 @@
         <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li>
 
 			<div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
@@ -106,21 +106,20 @@
           <input type="text" class="form-control" name="inputPrice" id="inputPrice">
         </div>
       </div>
-      <!--
-      <div class="form-group col-md-12">
-        <label for="CarPhoto">Add Photos</label>
-        <input type="file" class="form-control-file" id="carPhoto">
-      </div>
-      -->
       
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
 <?php
-    $mysqli = new mysqli("localhost", "root", "","carrentalapp");
-    if ($mysqli->connect_errno){
-        echo "Failed";
+    $servername = 'localhost';
+    $username = 'ics325fa2105';
+    $pass = '5768';
+    $databasename = 'ics325fa2105';
+
+    $mysqli = new mysqli($servername, $username, $pass, $databasename);
+   if ($mysqli->connect_errno){
+        echo "Failed" .mysqli_connect_error();
     }
     
     if(isset($_POST['inputPassword']) AND isset($_POST['inputEmail'])){

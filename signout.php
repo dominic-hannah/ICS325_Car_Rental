@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <meta http-equiv="refresh" content="4; url='http://localhost/project/index.php'" />
+  <meta http-equiv="refresh" content="4; url='http://sp-cfsics.metrostate.edu/~ics325fa2105/index.php'" />
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <style>
 	.bg-4 { 
@@ -28,9 +28,8 @@
 	<div class="col-xs-5 col-sm-3 pull-right">
 	<?php
 
-    
-	echo "<span> <em style='color:red'>Connected User:</em> <strong>None</strong></span>";
-    ?>
+      echo "<span> <em style='color:red'>Connected User:</em> <strong>None</strong></span>";
+  ?>
 </div>
  <div class="container">
     <ul class="nav nav-tabs" role="tablist">
@@ -52,8 +51,8 @@
         <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li>
 			<div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search" action="" method="post">
           <div class="input-group">
@@ -70,7 +69,8 @@
 <div class="container">
         <h1>See you again!!!</h1>
   <?php
-
+      session_start();
+      session_destroy();
     ?>
 </div>
 

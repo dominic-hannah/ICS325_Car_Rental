@@ -20,9 +20,14 @@
 </head>
 <body>
 <?php
-      $mysqli = new mysqli("localhost", "root", "","carrentalapp");
-      if ($mysqli->connect_errno){
-          echo "Failed";
+      $servername = 'localhost';
+      $username = 'ics325fa2105';
+      $pass = '5768';
+      $databasename = 'ics325fa2105';
+
+      $mysqli = new mysqli($servername, $username, $pass, $databasename);
+     if ($mysqli->connect_errno){
+          echo "Failed" .mysqli_connect_error();
       }
 ?>
 
@@ -32,11 +37,11 @@
   <div class="col-xs-5 col-sm-3 pull-right">
 	<?php
     session_start();
-    if (!empty($_SESSION)) {
+    if (isset($_SESSION['user_fname']) AND isset($_SESSION['user_lname'])) {
       echo "<span style='color:red'><em>Connected User:</em> <strong>".$_SESSION['user_fname']." ".$_SESSION['user_lname']."</strong></span>";
        ;
+       echo "  "."<a style='color:blue' href='signout.php'><u>Sign out</u></a>";	
     }
-	echo "  "."<a style='color:blue' href='signout.php'><u>Sign out</u></a>";	
     ?>
 	</div>
 </div>
@@ -60,8 +65,8 @@
         <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li> 
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li> 
 
     <div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
@@ -84,7 +89,7 @@
           </div>
           <?php
 
-          session_start();
+          
           $sql = "SELECT * FROM car";
           
           $result = mysqli_query($mysqli,$sql);

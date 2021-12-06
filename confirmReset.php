@@ -98,8 +98,8 @@ label.light {
         <li><a href="registration.php">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li> 
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li> 
 		
 			<div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
@@ -116,10 +116,16 @@ label.light {
   </div>
   <div class="container">
 	  <?php
-    $mysqli = new mysqli("localhost", "root", "","carrentalapp");
-    if ($mysqli->connect_errno){
-      echo "Failed";
+    $servername = 'localhost';
+    $username = 'ics325fa2105';
+    $pass = '5768';
+    $databasename = 'ics325fa2105';
+
+    $mysqli = new mysqli($servername, $username, $pass, $databasename);
+      if ($mysqli->connect_errno){
+            echo "Failed" .mysqli_connect_error();
     }
+
     if (isset($_POST['user_email']) AND isset($_POST['user_password']) AND isset($_POST['confirmpass'])){
       $usermail = $_POST['user_email'];
       $pass = $_POST['user_password'];

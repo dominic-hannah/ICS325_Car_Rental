@@ -170,8 +170,8 @@ icon-container {
         <li class="active"><a href="#">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li>
 
 			<div class="col-xs-5 col-sm-3 pull-right">
         	<form class="navbar-form" role="search">
@@ -280,11 +280,15 @@ icon-container {
                 echo "Passwords do NOT match! Please Try Again";
             }
 
-            $mysqli = new mysqli("localhost", "root", "","carrentalapp");
+            $servername = 'localhost';
+            $username = 'ics325fa2105';
+            $pass = '5768';
+            $databasename = 'ics325fa2105';
+      
+            $mysqli = new mysqli($servername, $username, $pass, $databasename);
             if ($mysqli->connect_errno){
-
-              echo "Failed";
-            }
+                  echo "Failed" .mysqli_connect_error();
+      	}
 
             if ($email == "" || $fname == "" || $lname == "" || $user_phone == "" || $password == ""){
               echo "<p> Fill Out all necessary forms </p>";
@@ -294,7 +298,6 @@ icon-container {
               $result = mysqli_query($mysqli,$sql);
             }   
         }
-        mysqli_close($mysqli);
         ?>
 <br><br>
 <footer class="container-fluid bg-4 text-center">
