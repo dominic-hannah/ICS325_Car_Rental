@@ -80,17 +80,27 @@
 
          $start_date = $_POST['start_date'];
          $end_date = $_POST['end_date'];
+         $interval = new DateInterval('P1D');
          $days = dateDiffInDays($start_date, $end_date);
          $price = ((int)$days * (int)$car[3]);
 
-          echo "You succesfully booked a car!<br> total price : ".$price."$<br>";
-          echo "days : ".$days."<br>car price per day : ".$car[3]."$  <br>";
+          echo "You succesfully booked: ".$car[2]." ".$car[5]."<br>";
+          echo "Rental length: ".$days." days<br>";
+          echo "Price per day: $".$car[3]."<br>";
+          echo "Total Price: $".$price."<br>";
           echo "<a href=index.php>GO BACK TO HOME</a><br>";
 
           $sql = "INSERT INTO rental_agreement (User_ID, Car_ID, Rental_Start, Rental_End, Total_Price) VALUES 
                       ('".$_SESSION['user_id']."', '".$car[0]."', '".$start_date."', '".$end_date."', '".$price."')";
                  
                  mysqli_query($mysqli,$sql);
+
+          
+          $daterange = new DatePeriod(strtotime($start_date), $interval, strtotime($end_date));
+          foreach ($daterange as $date){
+            $sql2 = "INSERT INTO availability (Car_ID, Date_Unavailible) VALUES ('".$car[0]."', '".$date."')";
+            mysqli_query($mysqli,$sql2);
+          }
 
           mysqli_close($mysqli);
           
