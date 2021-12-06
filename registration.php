@@ -132,6 +132,14 @@ icon-container {
   padding: 7px 0;
   font-size: 24px;
 }
+	.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 
 </style>
 </head>
@@ -288,6 +296,9 @@ icon-container {
         }
         mysqli_close($mysqli);
         ?>
-
+<br><br>
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyright - All right Reserved. This is the intellectual property of ICS325- Group 3</p> 
+</footer>
 </body>
 </html>

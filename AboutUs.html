@@ -7,12 +7,32 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+	.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+	</style>
 </head>
 <body>
 
 <div class="jumbotron text-center">
   <h1>MN CAR SOLUTION</h1>
   <p>We are the leading brand in automotive rental service!</p> 
+  <div class="col-xs-5 col-sm-3 pull-right">
+	<?php
+    session_start();
+    if (!empty($_SESSION)) {
+      echo "<span style='color:red'><em>Connected User:</em> <strong>".$_SESSION['user_fname']." ".$_SESSION['user_lname']."</strong></span>";
+       ;
+    }
+	echo "  "."<a style='color:blue' href='signout.php'><u>Sign out</u></a>";	
+    ?>
+	</div>
 </div>
  <div class="container">
   <h2>About Us</h2>
@@ -63,5 +83,9 @@
   </div>
 </div>
 
+<br><br>
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyright - All right Reserved. This is the intellectual property of ICS325- Group 3</p> 
+</footer>
 </body>
 </html>
