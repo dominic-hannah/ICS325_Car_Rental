@@ -38,6 +38,7 @@ input[type="password"],
 input[type="date"],
 input[type="datetime"],
 input[type="email"],
+input[type="phone"],
 input[type="number"],
 input[type="search"],
 input[type="tel"],
@@ -131,6 +132,14 @@ icon-container {
   padding: 7px 0;
   font-size: 24px;
 }
+	.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 
 </style>
 </head>
@@ -144,30 +153,41 @@ icon-container {
   <h2>Create Account</h2>
 
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Products <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="RentACar.html">Rent A car</a></li>
-        <li><a href="RentYourCar.html">Rent your car</a></li>                       
+        <li><a href="RentACar.php">Rent A car</a></li>
+        <li><a href="RentYourCar.php">Rent your car</a></li>                       
       </ul>
     </li>
      <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Service <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="login.html">Sign in</a></li>
+        <li><a href="login.php">Sign in</a></li>
         <li class="active"><a href="#">Create account</a></li>                      
       </ul>
     </li>
-    <li><a href="AboutUs.html">About Us & FAQs</a></li>
-    <li><a href="ContactUs.html">Contact Us</a></li>   
+    <li><a href="AboutUs.php">About Us & FAQs</a></li>
+    <li><a href="ContactUs.php">Contact Us</a></li>
+
+			<div class="col-xs-5 col-sm-3 pull-right">
+        	<form class="navbar-form" role="search">
+			 <div class="input-group">
+            <input type="text" class="form-control" width="300" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+				 </form>
+				</div>
+		 	
   </ul>
 </div>
   
 <div class="container">
-  <form action="#" method="post">
+  <form action="registration.php" method="post">
       
         <h1>USER PROFILE SET-UP</h1>
         
@@ -175,25 +195,32 @@ icon-container {
         <fieldset>
           <legend><span class="number">1</span>Personal information</legend>
           <label for="name">First Name:</label>
-          <input type="text" id="name" name="user_name">
+          <input type="text" id="name" name="user_fname">
+
           <label for="name">Last Name:</label>
-          <input type="text" id="name" name="user_name">
+          <input type="text" id="name" name="user_lname">
+
           <label for="mail">Email:</label>
           <input type="email" id="mail" name="user_email">
+
+          <label for="phone">Phone #:</label>
+          <input type="phone" id="phone" name="user_phone">
+
           <label for="password">Create Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="user_password1">
+
           <label for="password">Confirm Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="user_password2">
+
           <label for="date">Date of Birth:</label>
           <input type="date" id="date" name="user_dob">
+
           <label for="text">Place of Birth:</label>
           <input type="text" id="place" name="user_pob">
+
           <label>Gender:</label>
           <input type="radio" id="sex" value="sex" name="user_sex"><label for="male" class="light">Male</label><br>
           <input type="radio" id="isMale" value="isMale" name="user_sex"><label for="female" class="light">Female</label>
-          <label>Are you an admin:</label>
-          <input type="radio" id="choice" value="choice1" name="choice"><label for="Yes" class="light">Yes</label><br>
-          <input type="radio" id="choice2" value="choice2" name="choice"><label for="No" class="light">No</label>
           <label for="address">Address 1:</label>
           <input type="text" id="add1" name="user_add1">
           <label for="address">Address 2:</label>
@@ -227,52 +254,54 @@ icon-container {
         </fieldset>
         
 
-        <fieldset>
-          <legend><span class="number">2</span>Seller Account</legend>
-          <label for="bio">Describe your account rental service:</label>
-          <textarea id="bio" name="user_bio"></textarea>
-          <label for="picture">Upload profile picture:</label>
-          <input type="file" id="picture" name="yourpicture">
-           <label for="routingnumber">Routine number:</label>
-          <input type="number" id="routine" name="routine">
-           <label for="routinenumber">Account number:</label>
-          <input type="number" id="acctnum" name="acctnum">
-          <label for="bank">Bank or financial institution:</label>
-          <input type="text" id="bankinfo" name="bankinfo">
-        </fieldset>
-        <legend><span class="number">3</span>Buyer billing information</legend>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-              </div>
-
-        <fieldset>
-        
-        </fieldset>
         <button type="submit" onclick="alert('Thank you!!! for creating your user account')">Create Your Account</button>
     <a href="registration.html"><button  type="button"style="background-color:orange">Clear</button></a>
     <a href="index.html"><button type="button" style="background-color:red" >Home Page</button></a>
       </form>
 
 </div>
+<?php
+        
+        if(isset($_POST['user_email']) AND isset($_POST['user_fname']) AND 
+          isset($_POST['user_lname']) AND isset($_POST['user_password1']) AND isset($_POST['user_password2']) AND isset($_POST['user_phone'])){
+            $email = $_POST['user_email'];
 
+            $fname = $_POST['user_fname'];
+
+            $lname = $_POST['user_lname'];
+
+            $user_phone = $_POST['user_phone'];
+
+            if( $_POST['user_password1'] == $_POST['user_password2']){
+
+              $password = $_POST['user_password1'];
+            }else {
+
+                echo "Passwords do NOT match! Please Try Again";
+            }
+
+            $servername = 'localhost';
+            $username = 'ics325fa2105';
+            $pass = '5768';
+            $databasename = 'ics325fa2105';
+      
+            $mysqli = new mysqli($servername, $username, $pass, $databasename);
+            if ($mysqli->connect_errno){
+                  echo "Failed" .mysqli_connect_error();
+      	}
+
+            if ($email == "" || $fname == "" || $lname == "" || $user_phone == "" || $password == ""){
+              echo "<p> Fill Out all necessary forms </p>";
+            }else{
+              $sql = "INSERT INTO user (User_Fname, User_Lname, User_Phone, User_Email, User_Pass) VALUES ('".$fname."', '".$lname."', '".$user_phone."', '".$email."', '".$password."')";
+          
+              $result = mysqli_query($mysqli,$sql);
+            }   
+        }
+        ?>
+<br><br>
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyright - All right Reserved. This is the intellectual property of ICS325- Group 3</p> 
+</footer>
 </body>
 </html>
